@@ -1,0 +1,56 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>weblicht-nentities-ws-dw-archetype</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>A sample TCF processing web-service using DropWizard</h1>
+        <p>
+            This web-service imitates named entities recognizer service. 
+            The service processes POST requests containing TCF data with tokens.
+            It uses token annotations to produce named entity annotations. 
+        </p>
+        <p>
+            It imitates a tool that requires loading a named entities list for identifying named entities. 
+            This is a common use case when a tool uses resources such as lists, database, index, a machine learning model, etc. behind the hood.
+            Such resources can consume much memory and/or require much time when loading.
+            Therefore, it is better to create only one instance (or certain restricted number of instances) of the tool per application.
+            In this web-service example the tool instance is created only once (the corresponding list resource is loaded only once), when the application is created.
+            The example shows the case when the tool is not thread-safe.
+            Therefore, the tool's process() method requires synchronization.
+        </p>
+        <br/>
+        <p>You can test the service using curl or wget as follows:</p>
+        <ul>
+            <li>download the provided <a href="input.xml">input file</a></li>
+            <li>Run curl: 
+                <p>
+                <code> curl -H 'content-type: text/tcf+xml' --data-binary @input.xml -X POST <span class="url"></span>annotate/stream</code>
+                </p>
+                Or:
+                <p>
+                    <code> curl -H 'content-type: text/tcf+xml' --data-binary @input.xml -X POST <span class="url"></span>annotate/bytes</code>
+                </p>
+            </li>
+            <li>Or wget:
+                <p>
+                    <code> wget --post-file=input.xml --header='Content-Type: text/tcf+xml' <span class="url"></span>annotate/stream</code>
+                </p>
+                Or:
+                <p>
+                    <code> wget --post-file=input.xml --header='Content-Type: text/tcf+xml' <span class="url"></span>annotate/stream</code>
+                </p>
+            </li>
+        </ul>
+        <script type="text/javascript">
+                var elemList = document.getElementsByClassName("url");
+                for (var i = 0; i < elemList.length; i++) {
+                    elemList[i].innerHTML = window.location.href;
+                }
+        </script>
+    </body>
+</html>

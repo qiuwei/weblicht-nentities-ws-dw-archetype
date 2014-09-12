@@ -1,0 +1,23 @@
+server:
+  type: simple
+  applicationContextPath: /service-nentites
+  connector:
+    type: http
+    port: 8080
+  requestLog:
+    timeZone: UTC
+    appenders:
+      - type: file
+        currentLogFilename: ./access.log
+        archivedLogFilenamePattern: ./logs/access-%d.log.gz
+        archivedFileCount: 5
+
+logging:
+  level: INFO
+
+  appenders:
+    - type: file
+      currentLogFilename: ./nentites.log
+      archivedLogFilenamePattern: ./logs/nentites-%d.log.gz
+      archivedFileCount: 5
+      timeZone: UTC

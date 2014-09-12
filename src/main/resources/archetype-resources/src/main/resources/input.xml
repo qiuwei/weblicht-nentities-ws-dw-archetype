@@ -1,0 +1,13 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata">
+  </MetaData>
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+    <text>Karin fliegt nach Paris. Sie will dort Urlaub machen. Essen ist nicht ein attraktiver Urlaubsort für Karin, aber nach der Urlaub fliegt Karin nach Essen zurück.</text>
+    <tokens><token ID="t_0">Karin</token><token ID="t_1">fliegt</token><token ID="t_2">nach</token><token ID="t_3">Paris</token><token ID="t_4">.</token><token ID="t_5">Sie</token><token ID="t_6">will</token><token ID="t_7">dort</token><token ID="t_8">Urlaub</token><token ID="t_9">machen</token><token ID="t_10">.</token><token ID="t_11">Essen</token><token ID="t_12">ist</token><token ID="t_13">nicht</token><token ID="t_14">ein</token><token ID="t_15">attraktiver</token><token ID="t_16">Urlaubsort</token><token ID="t_17">für</token><token ID="t_18">Karin</token><token ID="t_19">,</token><token ID="t_20">aber</token><token ID="t_21">nach</token><token ID="t_22">der</token><token ID="t_23">Urlaub</token><token ID="t_24">fliegt</token><token ID="t_25">Karin</token><token ID="t_26">nach</token><token ID="t_27">Essen</token><token ID="t_28">zurück</token><token ID="t_29">.</token></tokens>
+    <sentences><sentence tokenIDs="t_0 t_1 t_2 t_3 t_4"></sentence><sentence tokenIDs="t_5 t_6 t_7 t_8 t_9 t_10"></sentence><sentence tokenIDs="t_11 t_12 t_13 t_14 t_15 t_16 t_17 t_18 t_19 t_20 t_21 t_22 t_23 t_24 t_25 t_26 t_27 t_28 t_29"></sentence></sentences>
+  </TextCorpus>
+</D-Spin>

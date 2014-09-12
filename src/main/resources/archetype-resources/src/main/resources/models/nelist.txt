@@ -1,0 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+Krin${symbol_pound}PER${symbol_pound}0.8
+Paris${symbol_pound}LOC${symbol_pound}0.9
+Essen${symbol_pound}LOC${symbol_pound}0.55
