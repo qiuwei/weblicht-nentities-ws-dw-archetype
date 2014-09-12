@@ -32,13 +32,12 @@
 
  All the classes below should be renamed to reflect the name of your tool.
  
-    de.tuebingen.uni.sfs.calrind.services.NamedEntitiesService.java - is the application definition, 
-    use it to define the path to your application and/or add more resources.
+    de.tuebingen.uni.sfs.calrind.NamedEntitiesApplication.java - is the application definition. 
 
     de.tuebingen.uni.sfs.calrind.resources.NamedEntitiesResource.java - is the definition of a 
     resource, in case more resources are required you can use it as a template 
     for any further resources. (Don't forget to add them to your class that
-    extends Application, e.g. ReferencesService.java)
+    extends Application, e.g. NamedEntitiesApplication)
 
     de.tuebingen.uni.sfs.calrind.core.NamedEntitiesTool.java - is the place where an actual 
     implementation of a tool resides. In this template a mock implementation of 
@@ -47,11 +46,14 @@
  It is recommended that you delete all the testing files when deploying this
  tool in a production environment, especially:
 
-    src/main/webapp/input.xml
+    src/main/resources/input.xml
 
  How To Deploy
  =============
  
+ mvn clean package
+ java -jar <generated jar> server ../example/service-nentities.yaml
+
  Once the application is deployed, it can be accessed using the following URL: 
  
  http://localhost:8080/weblicht-nentities-ws-archetype/annotate/stream
@@ -60,18 +62,15 @@
  
  http://localhost:8080/weblicht-nentities-ws-archetype/annotate/bytes
 
- Any Maven aware IDE (such as Netbeans or Eclipse) should be able to deploy this
- application using methods provided by the IDE.
 
- How To Test
  ===========
 
  You can test this webservice using either "wget" or "curl" along with the input 
  provided as part of this project at src/main/webapp/input.xml
 
  Run wget:
- wget --post-file=input.xml --header='Content-Type: text/tcf+xml' http://localhost:8080/weblicht-nentities-ws-archetype/annotate/stream
+ wget --post-file=input.xml --header='Content-Type: text/tcf+xml' http://localhost:8080/service-nentities/annotate/stream
 
  Or run curl:
- curl -H 'content-type: text/tcf+xml' -d @input.xml -X POST http://localhost:8080/weblicht-nentities-ws-archetype/annotate/stream
+ curl -H 'content-type: text/tcf+xml' -d @input.xml -X POST http://localhost:8080/service-nentities/annotate/stream
  
