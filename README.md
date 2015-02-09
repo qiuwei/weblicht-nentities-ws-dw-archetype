@@ -1,2 +1,2 @@
 # weblicht-nentities-ws-dw-archetype
-An archetype for create dropwizard webservice
+An archetype for creating dropwizard webservice
