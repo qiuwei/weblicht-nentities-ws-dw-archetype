@@ -2,6 +2,10 @@
 <archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="service-nentities"
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="serviceUser"/>
+    <requiredProperty key="serviceGroup"/>
+  </requiredProperties>
   <fileSets>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/main/java</directory>
@@ -10,17 +14,23 @@
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/assembly/conf</directory>
+    </fileSet>
+    <fileSet filtered="false" encoding="UTF-8">
+      <directory>src/assembly/bin</directory>
+    </fileSet>
+    <fileSet filtered="false" encoding="UTF-8">
+      <directory>src/assembly/init-scripts</directory>
+    </fileSet>
+    <fileSet filtered="false" encoding="UTF-8">
+      <directory>src/deb/control</directory>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
         <include>**/*.xml</include>
         <include>**/*.html</include>
         <include>**/*.txt</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>example</directory>
-      <includes>
-        <include>**/*.yaml</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">

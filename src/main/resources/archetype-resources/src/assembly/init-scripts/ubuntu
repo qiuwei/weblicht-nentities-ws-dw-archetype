@@ -1,0 +1,53 @@
+### END INIT INFO
+
+#. /lib/lsb/init-functions
+
+SERVICE_NAME=$(basename $0)
+
+test -r /etc/default/$SERVICE_NAME && . /etc/default/$SERVICE_NAME
+
+DESC=${SERVICE_NAME}
+JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-7-oracle}
+PATH=${JAVA_HOME}/bin:/sbin:/usr/bin
+START_SCRIPT=${START_SCRIPT:-/usr/bin/${SERVICE_NAME}}
+PIDFILE=/var/run/${SERVICE_NAME}.pid
+
+APPUSER=${CONVERTERUSER:-${SERVICEUSER}}
+APPGROUP=${CONVERTERGROUP:-${SERVICEGROUP}}
+
+
+test -x $START_SCRIPT || exit 0
+
+case "$1" in
+    start)
+        echo -n "Starting $DESC: "
+        start-stop-daemon -b --start --quiet \
+            -c $APPUSER \
+            -g $APPGROUP \
+            -d ${BASEDIR} \
+            -m --pidfile ${PIDFILE} \
+            --exec ${START_SCRIPT} \
+            -- $DAEMON_OPTS
+        echo "$NAME."
+        ;;
+    stop)
+        echo -n "Stopping $DESC: "
+        start-stop-daemon --stop --quiet --pidfile $PIDFILE
+        echo "$NAME."
+        ;;
+    restart)
+        $0 stop
+        sleep 2
+        $0 start
+    ;;
+    force-reload)
+        $0 stop
+        sleep 2
+        $0 start
+    ;;
+    *)
+        echo "Usage: $NAME {start|stop|restart|force-reload}" >&2
+        exit 1
+        ;;
+esac
+exit 0

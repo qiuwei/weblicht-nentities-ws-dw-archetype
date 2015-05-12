@@ -1,0 +1,8 @@
+Package: [[artifactId]]
+Version: [[version]]
+Section: misc
+Priority: optional
+Architecture: all
+Depends: java-runtime
+Maintainer: Put maintainer information here
+Description: Put your desciption here
