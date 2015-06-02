@@ -19,7 +19,7 @@ DESC=${SERVICE_NAME}
 if [-z ${JAVA_HOME}]; then
 JAVA_HOME=/usr/lib/jvm/java-7-oracle
 fi
-PATH=${JAVA_HOME}/bin:/sbin:/usr/bin
+PATH=${JAVA_HOME}/bin:/bin:/sbin:/usr/bin
 
 if [-z ${START_SCRIPT}]; then
 START_SCRIPT=/usr/bin/${SERVICE_NAME}
