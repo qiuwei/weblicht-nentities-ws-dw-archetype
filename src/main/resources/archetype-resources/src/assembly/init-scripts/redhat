@@ -21,8 +21,17 @@ set -e
 
 test -r /etc/default/$SERVICE_NAME && . /etc/default/$SERVICE_NAME
 
-APPUSER=${CONVERTERUSER:-${SERVICEUSER}}
-APPGROUP=${CONVERTERGROUP:-${SERVICEGROUP}}
+if [-n ${CONVERTERUSER}]; then
+APPUSER=${CONVERTERUSER}
+else
+APPUSER=${serviceUser}
+fi
+
+if [-n ${CONVERTERGROUP}]; then
+APPUSER=${CONVERTERGROUP}
+else
+APPUSER=${serviceGroup}
+fi
 
 PIDFILE=/var/run/${SERVICE_NAME}.pid
 
