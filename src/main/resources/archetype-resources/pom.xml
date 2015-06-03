@@ -87,6 +87,9 @@
                     <group>Applications/System</group>
                     <name>${project.artifactId}</name>
                     <release>${buildNumber}</release>
+                    <needarch>noarch</needarch>
+                    <targetOS>linux</targetOS>
+                    <targetVendor>pc</targetVendor>
                     <mappings>
                         <mapping>
                             <directory>/usr/share/${project.artifactId}/</directory>
