@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>eu.clarin.weblicht</groupId>
   <artifactId>weblicht-nentities-ws-dw-archetype</artifactId>
-  <version>1.0</version>
+  <version>1.0-snapshot</version>
   <packaging>maven-archetype</packaging>
-
   <name>weblicht-nentities-ws-dw-archetype</name>
-
+  <scm>
+    <url>https://dspin.sfs.uni-tuebingen.de/gitblit/summary/clarind!libraries!weblicht-nentities-ws-dw-archetype.git</url>
+    <connection>https://wei@dspin.sfs.uni-tuebingen.de/gitblit/r/clarind/libraries/weblicht-nentities-ws-dw-archetype.git</connection>
+    <developerConnection>scm:git:https://dspin.sfs.uni-tuebingen.de/gitblit/git/clarind/libraries/weblicht-nentities-ws-dw-archetype.git</developerConnection>
+    <tag>weblicht-nentities-ws-dw-archetype-1.1</tag>
+  </scm>
   <build>
     <extensions>
       <extension>
@@ -17,7 +20,6 @@
         <version>2.2</version>
       </extension>
     </extensions>
-
     <pluginManagement>
       <plugins>
         <plugin>
@@ -26,5 +28,18 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.4.2</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-gitexe</artifactId>
+            <version>1.8.1</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
   </build>
 </project>
