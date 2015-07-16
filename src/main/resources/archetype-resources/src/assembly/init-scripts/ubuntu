@@ -24,7 +24,6 @@ PATH=${JAVA_HOME}/bin:/bin:/sbin:/usr/bin
 if [ -z "${START_SCRIPT}" ]; then
 START_SCRIPT=/usr/bin/${SERVICE_NAME}
 fi
-PATH=${JAVA_HOME}/bin:/sbin:/usr/bin
 PIDFILE=/var/run/${SERVICE_NAME}.pid
 
 if [ -n "${CONVERTERUSER}" ]; then
