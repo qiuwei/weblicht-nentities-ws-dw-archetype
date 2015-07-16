@@ -16,27 +16,27 @@ SERVICE_NAME=$(basename $0)
 test -r /etc/default/$SERVICE_NAME && . /etc/default/$SERVICE_NAME
 
 DESC=${SERVICE_NAME}
-if [-z ${JAVA_HOME}]; then
+if [ -z "${JAVA_HOME}" ]; then
 JAVA_HOME=/usr/lib/jvm/java-7-oracle
 fi
 PATH=${JAVA_HOME}/bin:/bin:/sbin:/usr/bin
 
-if [-z ${START_SCRIPT}]; then
+if [ -z "${START_SCRIPT}" ]; then
 START_SCRIPT=/usr/bin/${SERVICE_NAME}
 fi
 PATH=${JAVA_HOME}/bin:/sbin:/usr/bin
 PIDFILE=/var/run/${SERVICE_NAME}.pid
 
-if [-n ${CONVERTERUSER}]; then
+if [ -n "${CONVERTERUSER}" ]; then
 APPUSER=${CONVERTERUSER}
 else
 APPUSER=${serviceUser}
 fi
 
-if [-n ${CONVERTERGROUP}]; then
-APPUSER=${CONVERTERGROUP}
+if [ -n "${CONVERTERGROUP}" ]; then
+APPGROUP=${CONVERTERGROUP}
 else
-APPUSER=${serviceGroup}
+APPGROUP=${serviceGroup}
 fi
 
 
