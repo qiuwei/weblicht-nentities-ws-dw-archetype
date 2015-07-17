@@ -28,9 +28,9 @@ APPUSER=${serviceUser}
 fi
 
 if [ -n "${CONVERTERGROUP}" ]; then
-APPUSER=${CONVERTERGROUP}
+APPGROUP=${CONVERTERGROUP}
 else
-APPUSER=${serviceGroup}
+APPGROUP=${serviceGroup}
 fi
 
 PIDFILE=/var/run/${SERVICE_NAME}.pid
